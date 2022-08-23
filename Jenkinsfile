@@ -18,13 +18,11 @@ pipeline {
       }
     }    
 
-    stage('Prod') {
+    stage('Prod') { 
       steps {
-        withCredentials([sshUserPrivateKey(credentialsId: '7670bb32-7252-4593-a2f3-79d3f0bcfbac')]) {
-          sh 'git checkout main'
-          sh 'git merge dev'
-          sh 'git push origin main'
-        }
+        sh 'git checkout main'
+        sh 'git merge dev'
+        sh 'git push origin main'
       }
     }  
   }
