@@ -48,7 +48,7 @@ describe('User feature', function()
   describe('PUT /user/:id' + id, function () {
     it('Updates user', function (done) {
       request(app)
-        .put('/user/')
+        .put('/user/' + id)
         .send({
           first_name: "updated",
           last_name: "test",
