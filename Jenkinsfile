@@ -22,6 +22,8 @@ pipeline {
       steps {
         sh 'git checkout main'
         sh 'git merge dev'
+        sh 'git commit -m "Merged develop branch to main PROD ok'
+        sh "git push origin main"
       }
     }  
   }
