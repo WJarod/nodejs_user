@@ -5,7 +5,7 @@ pipeline {
     
   stages {
         
-    stage('Cloning Git') {
+    stage('Cloning git && npm install') {
       steps {
         git branch: 'dev', url: 'https://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@github.com/WJarod/nodejs_user.git'
         sh 'npm install'
@@ -23,6 +23,7 @@ pipeline {
         sh 'git checkout main'
         sh 'git merge dev'
         sh 'git push origin main'
+        echo 'PROD OK'
       }
     }  
   }
