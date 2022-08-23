@@ -7,7 +7,7 @@ pipeline {
         
     stage('Cloning git && npm install') {
       steps {
-        git branch: 'dev', url: 'https://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@github.com/WJarod/nodejs_user.git'
+        git branch: 'dev', url: 'https://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@github.com/WJarod/nodejs_user.git'
         sh 'npm install'
       }
     }
