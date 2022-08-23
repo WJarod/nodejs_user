@@ -20,7 +20,9 @@ pipeline {
 
     stage('Prod') { 
       steps {
-        git branch: 'main', credentialsId: 'ebcfa03a-7cc1-41a7-90b4-e81fcfc6f0ff', url: 'https://github.com/WJarod/nodejs_user.git'
+        sh 'git config --global --unset-all user.name'
+        sh 'git config --global --unset-all user.email'
+        sh 'git checkout main'
         sh 'git merge dev'
         sh 'git push origin main'
       }
