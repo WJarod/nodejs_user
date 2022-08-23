@@ -23,11 +23,7 @@ pipeline {
         sh 'git config --global user.email "wuillaume.ja@gmail.com"'
         sh 'git config --global user.name "WNova"'
         sh 'git checkout main'
-        sh 'git pull origin main'
-        sh 'git merge --no-ff dev'
-        sh 'git push origin main'
-        sh 'git tag -a branch-dev -m "Merge dev into main"'
-        sh 'git push --tags'
+        sh 'git merge origin dev'
         sh 'git push origin main'
       }
     }  
