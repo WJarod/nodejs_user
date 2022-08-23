@@ -20,8 +20,6 @@ pipeline {
 
     stage('Prod') { 
       steps {
-        sh 'git config --global user.email "wuillaume.ja@gmail.com"'
-        sh 'git config --global user.name "WNova"'
         sh 'git checkout main'
         sh 'git merge dev'
         sh 'git push origin main'
