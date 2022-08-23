@@ -18,7 +18,7 @@ export const getUser = async (req, res) => {
     try
     {
         const upUser = await User.findById(req.params.id);
-        res.status(201).json(upUser);
+        res.status(200).json(upUser);
 
     }
     catch (error) 
@@ -70,7 +70,7 @@ export const deleteUser = async (req, res) => {
     try
     {
         await User.findByIdAndDelete(req.params.id);
-        res.status(201).json('supprimer : ' + req.params.id);
+        res.status(200).json('supprimer : ' + req.params.id);
     }
     catch (error) 
     {
