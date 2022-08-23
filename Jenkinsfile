@@ -26,22 +26,21 @@ pipeline {
         echo 'PROD OK'
       }
     }  
-
-    post {
-      always {
-        echo "Release finished do cleanup and send mails"
-        deleteDir()
-      }
-      success {
-        echo "Release Success"
-      }
-      failure {
-        echo "Release Failed"
-      }
-      cleanup {
-        echo "Clean up in post work space"
-        cleanWs()
-      }
+  }
+  post {
+    always {
+      echo "Release finished do cleanup and send mails"
+      deleteDir()
+    }
+    success {
+      echo "Release Success"
+    }
+    failure {
+      echo "Release Failed"
+    }
+    cleanup {
+      echo "Clean up in post work space"
+      cleanWs()
     }
   }
 }
