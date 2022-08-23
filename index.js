@@ -8,20 +8,6 @@ const app = express();
 
 app.use(bodyParser.json({extended: true}));
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(
-    cors({ 
-        Origin: 'http://localhost:5000', 
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-        allowedHeaders: [
-            'Content-Type', 
-            'Authorization', 
-            'Origin', 
-            'x-access-token', 
-            'XSRF-TOKEN'
-        ], 
-        preflightContinue: false
-    })
-  );
 
 app.use('/', userRoutes);
 
