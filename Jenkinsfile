@@ -25,10 +25,10 @@ pipeline {
         sh 'git checkout main'
         sh 'git pull origin main'
         sh 'git merge --no-ff dev'
-        sh 'git push'
+        sh 'git push origin main'
         sh 'git tag -a branch-dev -m "Merge dev into main"'
         sh 'git push --tags'
-        sh 'git push origin :main'
+        sh 'git push origin main'
       }
     }  
   }
