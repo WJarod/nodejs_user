@@ -21,8 +21,7 @@ pipeline {
     stage('Prod') { 
       steps {
         sh 'git checkout main'
-        sh 'pull-request --base main --head dev --message "PR from Jenkins"'
-        // sh 'git push origin main'
+        sh 'git push origin main'
         echo 'PROD OK'
       }
     }  
