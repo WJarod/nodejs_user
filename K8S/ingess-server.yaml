@@ -10,24 +10,24 @@ spec:
     - host: cdatest.com # On defini le nom de domaine sur la quel nous allons requeter
       http:
         paths:
-          - path: /jenkins # On defini le chemin d'acces au service pour les requettes
+          - path: / # On defini le chemin d'acces au service pour les requettes
             pathType: Prefix
             backend:
               service:
-                name: jenkins-clusterip-server # On recupere l'adresse pour communiquer avec le service
+                name: keycloak-clusterip-server # On recupere l'adresse pour communiquer avec le service
                 port:
                   number: 80
-          - path: /api # On defini le chemin d'acces au service pour les requettes
+          - path: /user # On defini le chemin d'acces au service pour les requettes
             pathType: Prefix
             backend:
               service:
                 name: user-clusterip-server # On recupere l'adresse pour communiquer avec le service
                 port:
                   number: 80
-          - path: /keycloak # On defini le chemin d'acces au service pour les requettes
+          - path: /jenkins # On defini le chemin d'acces au service pour les requettes
             pathType: Prefix
             backend:
               service:
-                name: keycloak-clusterip-server # On recupere l'adresse pour communiquer avec le service
+                name: jenkins-clusterip-server  # On recupere l'adresse pour communiquer avec le service
                 port:
                   number: 80
